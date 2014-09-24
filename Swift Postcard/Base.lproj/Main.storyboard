@@ -7,7 +7,7 @@
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Swift_Postcard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -50,7 +50,7 @@
         <!--View Controller-->
         <scene sceneID="cIq-64-amB">
             <objects>
-                <viewController id="jYd-hp-MrI" sceneMemberID="viewController">
+                <viewController id="jYd-hp-MrI" customClass="ViewController" customModule="Swift_Postcard" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jda-Mu-SMW"/>
                         <viewControllerLayoutGuide type="bottom" id="kPT-ts-BCE"/>
@@ -75,13 +75,13 @@
                                     <rect key="frame" x="16" y="251" width="361" height="30"/>
                                 </variation>
                             </textField>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsm-Ws-sgH">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsm-Ws-sgH">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="59" y="118" width="42" height="21"/>
+                                    <rect key="frame" x="16" y="81" width="184" height="115"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5et-NC-WgR">
@@ -94,13 +94,25 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="16" y="297" width="361" height="39"/>
                                 </variation>
+                                <connections>
+                                    <action selector="sendPostcardButton:" destination="jYd-hp-MrI" eventType="touchUpInside" id="yN4-Ny-rDN"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AlbertEinsteinStamp.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="7PB-4H-Dut">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="240" y="89" width="114" height="80"/>
+                                    <rect key="frame" x="263" y="116" width="114" height="80"/>
                                 </variation>
                             </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Hidden!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TrV-EX-bd9">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="154" y="437" width="93" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -110,6 +122,7 @@
                                 <exclude reference="lsm-Ws-sgH"/>
                                 <exclude reference="5et-NC-WgR"/>
                                 <exclude reference="7PB-4H-Dut"/>
+                                <exclude reference="TrV-EX-bd9"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -119,9 +132,17 @@
                                 <include reference="lsm-Ws-sgH"/>
                                 <include reference="5et-NC-WgR"/>
                                 <include reference="7PB-4H-Dut"/>
+                                <include reference="TrV-EX-bd9"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="hiddenChallengeLabel" destination="TrV-EX-bd9" id="htz-vo-FvG"/>
+                        <outlet property="mailButton" destination="5et-NC-WgR" id="7l5-QK-T19"/>
+                        <outlet property="messageStatusLabel" destination="lsm-Ws-sgH" id="txW-iG-rw8"/>
+                        <outlet property="messageTextField" destination="gbe-Hk-VE3" id="9lR-WR-oTV"/>
+                        <outlet property="nameTextField" destination="oh9-ge-h9v" id="KIJ-u5-5di"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MHu-RX-iHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
